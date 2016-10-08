@@ -3,9 +3,7 @@ date_default_timezone_set('Asia/Tokyo');
  
 $username = $_POST["id"];
 $password = $_POST["pw"];
-//echo "Caption : ";
-//$caption = trim(fgets(STDIN));
-//$caption = file_get_contents( "./caption/" . $caption . ".txt" );
+$caption = $_POST["text"];
 
 
 $data = $_POST["img"];
@@ -30,7 +28,6 @@ $header = make_header("{'username':'{$username}','password':'{$password}','guid'
  
  
 $res = json_decode(request($login_url,$header,false,true));
-//var_dump($res);
  
 /*-------------------
      post img
@@ -50,7 +47,6 @@ $header = make_header("{'guid':'{$guid}','device_id':'{$device_id}','device_time
  
  
 $res = json_decode(request($configure_url,$header,true,true));
-//echo $res->media->id;
  
 echo json_encode("success");
  
@@ -73,9 +69,9 @@ function request($url,$post_data,$cookies,$post){
     }
  
     if($cookies) {
-        curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.text');
+        curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt');
     } else {
-        curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookies.text');
+        curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookies.txt');
     }
  
     return curl_exec($ch);

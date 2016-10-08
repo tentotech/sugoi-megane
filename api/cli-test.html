@@ -17,7 +17,12 @@
 	</section>
 
 	<section class="instagram">
-		
+		<h3>Instagram test .</h3>
+		<input type="text" id="id" placeholder="type your id"></input>
+		<input type="password" id="pw" placeholder="type your pass"></input>
+		<input type="text" id="text" placeholder="type text ."></input>
+		<input type="file" id="instagram-img"></input>
+		<span class="req-btn">send</span>
 	</section>
 
 	<section class="slack">
@@ -32,6 +37,9 @@
 	var imgs;
 
 	$(".twitter .req-btn").on('click',function(){
+		SNSReq("twitter");
+	});
+	$(".instagram .req-btn").on('click',function(){
 		SNSReq("instagram");
 	});
 
@@ -45,9 +53,9 @@
 		reader.onload = function(event){
 			img.onload = function(){
 				data = {	
-					id : $(".twitter #id").val(),
-					pw : $(".twitter #pw").val(),
-					text: $(".twitter #text").val(),
+					id : $("."+ sns +" #id").val(),
+					pw : $("."+ sns +" #pw").val(),
+					text: $("."+ sns +" #text").val(),
 					img: img.src.split(',')[1]
 				}
 
@@ -72,6 +80,11 @@
 	//function imgReq(){
 		//指定要素が変更された時
 	$('#tweet-img').change(function(){
+	    img = new Image();
+		reader = new FileReader();
+		file = this.files[0];
+	});
+	$('#instagram-img').change(function(){
 	    img = new Image();
 		reader = new FileReader();
 		file = this.files[0];
