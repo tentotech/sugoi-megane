@@ -75,6 +75,7 @@ li {
 	vertical-align: middle;
 }
 .ctrl-bar > ul p {
+	cursor: pointer;
 	text-align: center;
 	padding: .4em;
 	color: #333;

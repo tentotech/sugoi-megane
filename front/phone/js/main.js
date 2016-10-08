@@ -7,6 +7,8 @@ $(function(){
   		console.log(res.value.trigger);
 	});
 
-	ds.send({trigger : 'photo'});
-
+	$(".action-menu > li > p").on("click",function(){
+		action = $(this).attr("action");
+		ds.send({trigger : action});
+	});
 });
