@@ -1,0 +1,91 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+@font-face {
+  font-family: 'my';
+  src: url("../fonts/LondrinaOutline-Regular.otf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,body {
+	background: #fff;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+}
+
+section {
+	background: #fff;
+	width: 320px;
+	height: 568px;
+	margin: auto;
+	position: relative;
+	top:50%;
+	transform: translateY(-50%) scale(.85);
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.35);
+	border: solid 1px rgba(0,0,0,0.25);
+}
+
+li {
+	list-style: none;
+}
+
+.connect-info {
+	background: #7f8c8d;
+	padding: 3.5em 0;
+	box-shadow: 0px -14px 10px -4px rgba(0,0,0,0.2) inset;
+}
+.connect-info > div {
+	text-align: center;
+
+}
+.connect-info span {
+	padding: .25em;
+	border: 7px double #f9f1e9;
+	border-radius: 8px;
+	text-align: center;
+	letter-spacing: 3px;
+	font-size: 2.5em;
+	color: #f9f1e9;
+	font-family: 'my';
+
+}
+
+
+.ctrl-bar {
+	z-index: 2;
+	position: relative;
+}
+.ctrl-bar > p{
+	color: #333;
+	padding: 1em .25em;
+	font-size: .95em;
+	text-align: center;
+	letter-spacing: 1px;
+}
+.ctrl-bar ul {
+	padding: .5em 1em;
+	padding-top: 0;
+}
+.ctrl-bar ul li {
+	padding: .75em 2em;
+	vertical-align: middle;
+}
+.ctrl-bar > ul p {
+	text-align: center;
+	padding: .4em;
+	color: #333;
+	font-size: 1.2em;
+	border: solid 2px #7f8c8d;
+	border-radius: 2px;
+	vertical-align: middle;
+}
+.ctrl-bar > ul p i {
+	font-size: 1.5em;
+	vertical-align: middle;
+	margin-right: .25em;
+	color: #78af71;
+}
