@@ -48,6 +48,20 @@ $(function(){
 	$(".twi-send").on("click",function(){
 		twisend();
 	});
+	$(".ig-send").on("click",function(){
+		igsend();
+	});
+
+	$(".cancel i").on("click",function(){
+		$(".ig-id").val("");
+		$(".ig-pw").val("");
+		$(".twi-id").val("");
+		$(".twi-pw").val("");
+
+		$(".twi-form").hide();
+		$(".ig-form").hide();
+		$(".fil").hide();
+	})
 
 	function twisend(){
 		data = {	
@@ -62,8 +76,8 @@ $(function(){
 		   	url: "http://nagix2.webcrow.jp/halloween-chikara/api/setting.php",
 		    data: data,
 		    success: function(res){
-		    	$(".twi-id").val(""),
-				$(".twi-pw").val("")
+		    	$(".twi-id").val("");
+				$(".twi-pw").val("");
 				$(".fil").hide();
 				$(".twi-form").hide();
 
@@ -86,8 +100,8 @@ $(function(){
 		   	url: "http://nagix2.webcrow.jp/halloween-chikara/api/setting.php",
 		    data: data,
 		    success: function(res){
-		    	$(".ig-id").val(""),
-				$(".ig-pw").val("")
+		    	$(".ig-id").val("");
+				$(".ig-pw").val("");
 				$(".fil").hide();
 				$(".ig-form").hide();
 

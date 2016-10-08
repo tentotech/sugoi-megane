@@ -278,3 +278,16 @@ li {
 	text-align: center;
 	letter-spacing: 2px;
 }
+
+.cancel {
+	position: absolute;
+	top:0;
+	right: 0;
+	padding: .8em .8em;
+	color: #fff;
+	font-size: .95em;
+
+}
+.cancel i {
+	cursor: pointer;
+}
