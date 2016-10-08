@@ -5,19 +5,10 @@ header('Content-Type: application/json; charset=UTF-8');
 require 'lib/TwistOAuth.phar';
 require 'lib/xauth.php';
 
-$id = $_POST['id'];
-$pw = $_POST['pw'];
-
-
-$data = $_POST["img"];
-$imageName = rand(rand(1,20),rand(100,500)).rand().".jpg";
-$fp = fopen("img/" . $imageName, "w");
-fwrite($fp, base64_decode($data));
-fclose($fp);
 
 try {
 
-	$token = xauth($id,$pw);
+	$token = xauth("Angular2_js","firenagi");
 	$to = new TwistOAuth($token->ck,$token->cs,$token->oauth_token,$token->oauth_token_secret);
 
     $TweetText = $_POST['text'];
@@ -28,7 +19,7 @@ try {
     
     $to->postMultipart('statuses/update_with_media', array(
     	'status' => $TweetText,
-    	'@media[]' => 'img/'.$imageName,
+    	'@media[]' => "114754639415.jpg",
 	));
 
     echo json_encode("success");

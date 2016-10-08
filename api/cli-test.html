@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test client . </title>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<section class="twitter">
+		<h3>Twitter test .</h3>
+		<input type="text" id="id" placeholder="type your id"></input>
+		<input type="password" id="pw" placeholder="type your pass"></input>
+		<input type="text" id="text" placeholder="type text ."></input>
+		<input type="file" id="tweet-img"></input>
+		<span class="req-btn">send</span>
+	</section>
+
+	<section class="instagram">
+		
+	</section>
+
+	<section class="slack">
+		
+	</section>
+</body>
+<script type="text/javascript">
+
+	var file;
+	var reader;
+	var image;
+	var imgs;
+
+	$(".twitter .req-btn").on('click',function(){
+		TwitterReq();
+	});
+
+	function TwitterReq(){
+
+
+		if (!file.type.match(/^image\/(png|jpeg|gif)$/)){
+			return;
+		}
+	    
+		reader.onload = function(event){
+			img.onload = function(){
+				data = {	
+					id : $(".twitter #id").val(),
+					pw : $(".twitter #pw").val(),
+					text: $(".twitter #text").val(),
+					img: img.src.split(',')[1]
+				}
+
+				$.ajax({
+			    	type: "POST",
+			    	url: "twitter.php",
+			        data: data,
+			        success: function(res){
+			            console.log(res);
+			        },
+			        error: function(XMLHttpRequest) {
+			        	console.log(XMLHttpRequest);
+			       	}
+			    });
+			};
+			img.src = event.target.result;
+		};
+	    
+		reader.readAsDataURL(file);
+
+	}
+	//function imgReq(){
+		//指定要素が変更された時
+	$('#tweet-img').change(function(){
+	    img = new Image();
+		reader = new FileReader();
+		file = this.files[0];
+	});
+	//}
+</script>
+<style type="text/css">
+	.req-btn {
+		background: #239e3d;
+		border-radius: 3px;
+		letter-spacing: 1px;
+		padding: .75em 2em;
+		font-size: .85em;
+		color: #fff;
+	}
+</style>
+</html>
