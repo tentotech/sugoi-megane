@@ -36,6 +36,6 @@ $(function(){
 		ds.send({trigger : "take"});
 		setTimeout(function(){
 			$(".photo").removeClass("flash");
-		},200);
+		},500);
 	});
 });

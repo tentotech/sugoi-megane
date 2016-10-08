@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test client . </title>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<section class="slack">
+		
+	</section>
+</body>
+<script type="text/javascript">
+
+data = {	
+	method: "GET",
+	sns: "twitter",
+	id: "Angular2_js",
+	pw: ""
+}
+
+$.ajax({
+   	type: "POST",
+   	url: "setting.php",
+    data: data,
+    success: function(res){
+       console.log(res);
+    },
+    error: function(XMLHttpRequest) {
+    	console.log(XMLHttpRequest);
+    }
+});
+
+	
+</script>
+<style type="text/css">
+	.req-btn {
+		background: #239e3d;
+		border-radius: 3px;
+		letter-spacing: 1px;
+		padding: .75em 2em;
+		font-size: .85em;
+		color: #fff;
+	}
+</style>
+</html>
