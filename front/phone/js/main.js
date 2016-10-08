@@ -38,4 +38,63 @@ $(function(){
 			$(".photo").removeClass("flash");
 		},500);
 	});
+
+	$("ul.sns > li p").on("click",function(){
+		sns = $(this).attr("sns");
+		$(".fil").show();
+		$("." + sns + "-form").show();
+	});
+
+	$(".twi-send").on("click",function(){
+		twisend();
+	});
+
+	function twisend(){
+		data = {	
+			method: "POST",
+			sns: "twitter",
+			id: $(".twi-id").val(),
+			pw: $(".twi-pw").val()
+		}
+		
+		$.ajax({
+		   	type: "POST",
+		   	url: "http://nagix2.webcrow.jp/halloween-chikara/api/setting.php",
+		    data: data,
+		    success: function(res){
+		    	$(".twi-id").val(""),
+				$(".twi-pw").val("")
+				$(".fil").hide();
+				$(".twi-form").hide();
+
+		    },
+		    error: function(XMLHttpRequest) {
+		    	console.log(XMLHttpRequest);
+		    }
+		});
+	}
+	function igsend(){
+		data = {	
+			method: "POST",
+			sns: "instagram",
+			id: $(".ig-id").val(),
+			pw: $(".ig-pw").val()
+		}
+		
+		$.ajax({
+		   	type: "POST",
+		   	url: "http://nagix2.webcrow.jp/halloween-chikara/api/setting.php",
+		    data: data,
+		    success: function(res){
+		    	$(".ig-id").val(""),
+				$(".ig-pw").val("")
+				$(".fil").hide();
+				$(".ig-form").hide();
+
+		    },
+		    error: function(XMLHttpRequest) {
+		    	console.log(XMLHttpRequest);
+		    }
+		});
+	}
 });
