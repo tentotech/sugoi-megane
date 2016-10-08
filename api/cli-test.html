@@ -32,11 +32,11 @@
 	var imgs;
 
 	$(".twitter .req-btn").on('click',function(){
-		TwitterReq();
+		SNSReq("twitter");
 	});
 
-	function TwitterReq(){
-
+	function SNSReq(sns){
+		url = sns + ".php";
 
 		if (!file.type.match(/^image\/(png|jpeg|gif)$/)){
 			return;
@@ -53,7 +53,7 @@
 
 				$.ajax({
 			    	type: "POST",
-			    	url: "twitter.php",
+			    	url: url,
 			        data: data,
 			        success: function(res){
 			            console.log(res);

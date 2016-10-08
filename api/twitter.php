@@ -21,10 +21,6 @@ try {
 	$to = new TwistOAuth($token->ck,$token->cs,$token->oauth_token,$token->oauth_token_secret);
 
     $TweetText = $_POST['text'];
-
-    //$media_id = $to->postMultipart('media/upload', array('@media' => 'img/' . $imageName))->media_id_string;
-
-    //$to->post('statuses/update', array('status' => $TweetText." #testHackathon",'media_ids' => $media_id));
     
     $to->postMultipart('statuses/update_with_media', array(
     	'status' => $TweetText,
