@@ -14,7 +14,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   devServer: {
-    contentBase: './src',
+    contentBase: './static',
     historyFallback: true
   }
 }
