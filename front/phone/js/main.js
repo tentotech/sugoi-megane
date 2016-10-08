@@ -4,6 +4,7 @@ $(function(){
 
 	var ds = milkcocoa.dataStore('test-ds');
 
+	// test
 	ds.on('send', function(res) {
   		console.log(res.value.trigger);
 	});
@@ -28,5 +29,13 @@ $(function(){
 		$(prev).removeClass("hide").addClass("show");
 
 		ds.send({trigger : "home"});
+	});
+
+	$(".camera-btn > div i").on("click",function(){
+		$(".photo").addClass("flash");
+		ds.send({trigger : "take"});
+		setTimeout(function(){
+			$(".photo").removeClass("flash");
+		},200);
 	});
 });

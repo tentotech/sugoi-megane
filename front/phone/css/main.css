@@ -82,6 +82,12 @@ li {
 .ctrl-bar {
 	z-index: 2;
 	position: relative;
+	height: auto;
+}
+.guid {
+	text-align: center;
+	color: #555;
+	letter-spacing: 1px;
 }
 .ctrl-bar > p{
 	color: #333;
@@ -115,7 +121,6 @@ li {
 	color: #78af71;
 }
 
-
 .ctrl-content .back {
 	padding: 2em;
 	text-align: center;
@@ -138,4 +143,55 @@ li {
 	vertical-align: middle;
 	margin-right: .25em;
 	color: #78af71;
+}
+
+.photo.flash {
+	opacity: 1;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-name: flash;
+	animation-duration: 1s;
+	animation-name: flash;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.camera-btn {
+	padding: 3em 1em;
+}
+.camera-btn > div {
+	border: solid 7px #78af71;
+	border-radius: 100px;
+	width: 10em;
+	height: 10em;
+	margin: auto;
+	opacity: .4;
+	text-align: center;
+	position: relative;
+	transition: all .5s;
+}
+.camera-btn > div i {
+	cursor: pointer;
+	display: block;
+	position: relative;
+	top:50%;
+	transform: translateY(-50%);
+	color: #78af71;
+	font-size: 6em;
+}
+.camera-btn > div:hover {
+	opacity: .7;
 }
