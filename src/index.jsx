@@ -2,7 +2,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import {Router, browserHistory} from 'react-router'
 import Home from './components/Home'
-/* import Subtitle from './components/Subtitle'*/
+import Subtitle from './components/Subtitle'
 /* import Conan from './components/Conan'
  * import Camera from './components/Camera'*/
 
@@ -16,6 +16,11 @@ class App extends React.Component {
         path: '/',
         component: Home,
         onEnter: () => this.currentRoute = Home
+      },
+      {
+        path: '/subtitle',
+        component: Subtitle,
+        onEnter: () => this.currentRoute = Subtitle
       }
     ]
   }

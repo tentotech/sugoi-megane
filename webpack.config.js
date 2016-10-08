@@ -15,6 +15,6 @@ module.exports = {
   },
   devServer: {
     contentBase: './static',
-    historyFallback: true
+    historyApiFallback: true
   }
 }
