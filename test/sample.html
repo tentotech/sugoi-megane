@@ -1,0 +1,78 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Speech API</title>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+var recognition = new webkitSpeechRecognition();
+recognition.lang = 'ja';
+
+
+var TweetRec = false;
+
+recognition.onresult = function(event){
+    var text = event.results.item(0).item(0).transcript;
+    if(TweetRec == true ){
+    	console.log("Tweet : " + text);
+
+        /*
+    	data = {text : text}
+    	$.ajax({
+                type: "POST",
+                url: "api.php",
+                data: data,
+                success: function(msg){
+                    console.log("200");
+                },
+                error: function(XMLHttpRequest) {
+            		console.log(XMLHttpRequest.status);
+         		}
+         });
+         */
+    }
+
+    // 起動
+    if(text == "twitter" ){
+    	TweetRec = true;
+    	speechSynthesis.speak(
+    		new SpeechSynthesisUtterance("了解しました")
+		);
+    } else {
+    	TweetRec = false;
+    }
+
+    console.log("Get : " + text);
+    setTimeout(function(){
+    	record();
+    },500);
+    
+};
+
+recognition.onerror= function(){
+    console.log("Error");
+    setTimeout(function(){
+    	record();
+    },500);
+};
+recognition.onnomatch = function(){
+    console.log("Error");
+    setTimeout(function(){
+    	record();
+    },500);
+};
+
+
+// 録音開始
+function record()
+{
+    recognition.start();
+}
+
+record();
+</script>
+</head>
+<body>
+<input type="button" onClick="record()" value="録音開始" />
+</body>
+</html>
