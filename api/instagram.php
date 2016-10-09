@@ -1,6 +1,6 @@
 <?php
 
-header('Content-Type: application/json; charset=UTF-8');
+//header('Content-Type: application/json; charset=UTF-8');
 header("Access-Control-Allow-Origin: *");
 date_default_timezone_set('Asia/Tokyo');
  
@@ -37,7 +37,6 @@ $res = json_decode(request($login_url,$header,false,true));
 ---------------------*/
 $upload_url = "https://instagram.com/api/v1/media/upload/";
 $path = "img/".$post_img;
-echo $path;
 $parm = array('photo' => "@".$path ,"device_timestamp" => time());
  
 $res = json_decode(request($upload_url,$parm,true,true));
@@ -51,7 +50,7 @@ $header = make_header("{'guid':'{$guid}','device_id':'{$device_id}','device_time
  
 $res = json_decode(request($configure_url,$header,true,true));
  
-echo json_encode("success");
+echo json_encode($res);
  
 function request($url,$post_data,$cookies,$post){
  

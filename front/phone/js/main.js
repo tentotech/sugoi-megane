@@ -104,7 +104,6 @@ $(function(){
 				$(".ig-pw").val("");
 				$(".fil").hide();
 				$(".ig-form").hide();
-
 		    },
 		    error: function(XMLHttpRequest) {
 		    	console.log(XMLHttpRequest);

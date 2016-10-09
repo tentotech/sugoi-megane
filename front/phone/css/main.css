@@ -196,6 +196,10 @@ li {
 	opacity: .7;
 }
 
+.cap p {
+	padding: 5em 1.5em;
+	font-size: .85em;
+}
 .config p {
 	padding: 1em 0;
 	font-size: 1.1em;

@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>WebAPI</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.mlkcca.com/v0.6.0/milkcocoa.js"></script>
+</head>
+<body>
+    <div call="cap">
+        <p>cap</p>
+    </div>
+    <div call="photo">
+        <p>photo</p>
+    </div>
+    <div call="take">
+        <p>take</p>
+    </div>
+    <div call="home">
+        <p>home</p>
+    </div>
+
+    <script>
+
+        var milkcocoa = new MilkCocoa('woodiu1f1mcm.mlkcca.com');
+
+        var ds = milkcocoa.dataStore('test-ds');
+
+        ds.on('send', function(res) {
+            console.log(res.value.trigger);
+        });
+
+        $("div").on("click",function(){
+            ev = $(this).attr("call");
+            ds.send({"trigger" : ev});
+        });
+
+
+    </script>
+    <style type="text/css">
+        div {
+            cursor: pointer;
+            width: 100px;
+            margin: 1em;
+            background: #333;
+            border-radius: 3px;
+            padding: 1em 3em;
+            color: #fff;
+        }
+    </style>
+</body>
+</html>
