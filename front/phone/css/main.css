@@ -57,9 +57,12 @@ li {
 	list-style: none;
 }
 
+.home .connect-info{
+	padding: 3.5em 0!important;
+}
 .connect-info {
 	background: #7f8c8d;
-	padding: 3.5em 0;
+	padding: 2.5em 0;
 	box-shadow: 0px -14px 10px -4px rgba(0,0,0,0.2) inset;
 }
 .connect-info > div {
@@ -298,4 +301,157 @@ li {
 
 .no-ready {
 	background: #777!important;
+}
+
+@media only screen and (max-width: 640px) {
+	section {
+		width: 100%;
+		height: 100%;
+	}
+
+	.home .connect-info{
+		padding: 3em 0!important;
+	}
+	.connect-info {
+		padding: 2em 0;
+	}
+
+	.connect-info span {
+		padding: .25em;
+		border: 7px double #f9f1e9;
+		border-radius: 8px;
+		text-align: center;
+		letter-spacing: 1px;
+		font-size: 2.15em;
+		color: #f9f1e9;
+		font-family: 'my';
+
+	}
+
+
+	.ctrl-bar {
+		z-index: 2;
+		position: relative;
+		height: auto;
+	}
+	.guid {
+		text-align: center;
+		color: #555;
+		letter-spacing: 1px;
+	}
+	.ctrl-bar > p{
+		color: #333;
+		padding: 1em .25em;
+		font-size: .95em;
+		text-align: center;
+		letter-spacing: 1px;
+	}
+	.ctrl-bar ul {
+		padding: .5em 1em;
+		padding-top: 0;
+	}
+	.ctrl-bar ul li {
+		padding: .75em 2em;
+		vertical-align: middle;
+	}
+	.ctrl-bar > ul p {
+		cursor: pointer;
+		text-align: center;
+		padding: .4em;
+		color: #333;
+		font-size: 1.2em;
+		border: solid 2px #7f8c8d;
+		border-radius: 2px;
+		vertical-align: middle;
+	}
+	.ctrl-bar > ul p i {
+		font-size: 1.5em;
+		vertical-align: middle;
+		margin-right: .25em;
+		color: #78af71;
+	}
+
+	.ctrl-content .back {
+		padding: 1.5em;
+	}
+	.ctrl-content .back span {
+		padding: .75em .75em;
+		font-size: 1.15em;
+	}
+
+	.ctrl-content .back span i {
+		font-size: 1.5em;
+		margin-right: .25em;
+		color: #78af71;
+	}
+
+	.photo.flash {
+		opacity: 1;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-name: flash;
+		animation-duration: 1s;
+		animation-name: flash;
+	}
+	@-webkit-keyframes flash {
+		0% {
+			opacity: .4;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@keyframes flash {
+		0% {
+			opacity: .4;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.camera-btn {
+		padding: 2em 1em;
+	}
+	.camera-btn > div {
+		width: 7em;
+		height: 7em;
+	}
+	.camera-btn > div i {
+		font-size: 4.5em;
+	}
+
+
+	.cap p {
+		padding: 6em 1.5em;
+		font-size: .8em;
+	}
+	.config p {
+		padding: 1em 0;
+		font-size: .9em;
+	}
+
+	.config ul {
+		padding: .75em 1em;
+
+	}
+
+	.config ul li {
+		padding: .75em;
+	}
+	.config ul li p {
+		cursor: pointer;
+		width: 60%;
+		border-radius: 2px;
+		background: #78af71;
+		padding: .35em .5em;
+		margin:auto;
+		text-align: center;
+		color: #fff;
+		transition: all .35s;
+	}
+
+
+
+
+
 }
