@@ -295,3 +295,7 @@ li {
 .cancel i {
 	cursor: pointer;
 }
+
+.no-ready {
+	background: #777!important;
+}

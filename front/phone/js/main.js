@@ -41,8 +41,10 @@ $(function(){
 
 	$("ul.sns > li p").on("click",function(){
 		sns = $(this).attr("sns");
-		$(".fil").show();
-		$("." + sns + "-form").show();
+		if(sns){
+			$(".fil").show();
+			$("." + sns + "-form").show();
+		}
 	});
 
 	$(".twi-send").on("click",function(){
@@ -88,7 +90,7 @@ $(function(){
 		});
 	}
 	function igsend(){
-		data = {	
+		/*data = {	
 			method: "POST",
 			sns: "instagram",
 			id: $(".ig-id").val(),
@@ -109,5 +111,6 @@ $(function(){
 		    	console.log(XMLHttpRequest);
 		    }
 		});
+		*/
 	}
 });
