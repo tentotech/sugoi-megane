@@ -41,6 +41,8 @@ class App extends React.Component {
         case 'home':
           browserHistory.push('/')
           return
+        case 'config':
+          return
         default:
           this.setState({event: res})
           return
