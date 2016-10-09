@@ -13,6 +13,17 @@ const calcPhotoSize = () => {
   }
 }
 
+const postPhoto = photoDataURI => {
+  const form = new FormData()
+  form.append('img', photoDataURI.split(',')[1])
+  fetch('http://nagix2.webcrow.jp/halloween-chikara/api/twitter.php', {
+    method: 'POST',
+    mode: 'cors',
+    body: form
+  }).then(resp => resp.text())
+  .then(text => console.log(text))
+}
+
 
 class Camera extends React.Component {
   constructor(...args) {
@@ -38,8 +49,8 @@ class Camera extends React.Component {
         }, () => {
           const [width, height] = calcPhotoSize()
           context.drawImage(video, (window.innerWidth - width) / 2, (window.innerHeight - height) / 2, width, height)
+          postPhoto(canvas.toDataURL())
         })
-        return
     }
   }
 
