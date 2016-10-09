@@ -2,13 +2,8 @@ import React from 'react'
 
 
 class Subtitle extends React.Component {
-  static onMilkCocoa(res) {
-    // there is no event specific to this app
-    return
-  }
-
-  constructor() {
-    super()
+  constructor(...args) {
+    super(...args)
     this.state = {
       subtitle: ''
     }

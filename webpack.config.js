@@ -3,15 +3,19 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /.jsx$/,
+        test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.s?css$/,
+        loaders: ['style', 'css', 'sass']
       }
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.scss', '.css']
   },
   devServer: {
     contentBase: './static',
